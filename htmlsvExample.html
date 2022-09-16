@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- Copyright Daniel Rooke 18/08/2022 -->
+<html>
+    <head>
+        <link rel="stylesheet" href="css/main.css">
+        <script src="htmlsv.js"></script>
+    </head>
+    <body class="Color2">
+        <div id="topMenu" class="topbar Color1">
+            <h4>Title</h4>
+        </div>
+        <div id="sideMenu" class="sidebar Color1">
+            \{
+                var str = "";
+                var items = ["Home", "Profile", "Discover", "Popular", "Featured", "Other"];
+                for(var i = 0; i < 6; i++){
+                  //console.log("<p>Paragraph:" + i + "</p>");
+                  str += '<p id="' + items[i] + 'SideBarID" class="sidebarItem Color2">'+ items[i] + "</p>"
+                }
+                //console.log("from func:"+str)
+                return str;
+            \}
+        </div>
+        <div id="mainDiv">
+            <p>this is some normal html text</p>
+            <p>4+3 = \(return 3+4;\)</p>
+            \{
+                var str = "";
+                for(var i = 10; i >= 0; i--){
+                  //console.log("<p>Paragraph:" + i + "</p>");
+                  str += "<p>Paragraph:" + i + "</p>"
+                }
+                console.log("from func:"+str)
+                return str;
+            \}
+        </div>
+    </body>
+    <script>
+        //This line parses the HTMLS in the file
+        document.body.outerHTML = parseHTMLS(document.body.outerHTML);
+    </script>
+</html>
